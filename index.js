@@ -3,14 +3,14 @@ const fs = require("fs");
 const app = express();
 
 const path = "./chats.json";
+var readedData;
 
 fs.readFile(path, "utf8", (error, data) => {
     if (error) {
       console.log(error);
       return;
     }
-    const readedData = JSON.parse(data);
-    console.log(readedData.arshia);
+    readedData = JSON.parse(data);
 });
 
 
@@ -19,6 +19,6 @@ fs.readFile(path, "utf8", (error, data) => {
 app.all('/', (req, res) => {
 
     console.log("got a request!")
-    res.send('Yo')
+    res.send(readedData)
 })
 app.listen(process.env.PORT || 3000)
