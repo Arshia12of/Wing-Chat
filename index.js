@@ -1,6 +1,6 @@
 const express = require('express')
 const fs = require("fs");
-const app = express()
+const app = express();
 
 const path = "./chats.json";
 
@@ -9,8 +9,9 @@ fs.readFile(path, "utf8", (error, data) => {
       console.log(error);
       return;
     }
-    console.log(JSON.parse(data));
-  });
+    const readedData = JSON.parse(data);
+    console.log(readedData.arshia);
+});
 
 
 
