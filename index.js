@@ -19,6 +19,6 @@ fs.readFile(path, "utf8", (error, data) => {
 app.all('/', (req, res) => {
 
     console.log(readedData.name)
-    res.send(req.socket.remoteAddress)
+    res.send(req.header('x-forwarded-for'))
 })
 app.listen(process.env.PORT || 3000)
