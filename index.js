@@ -18,7 +18,8 @@ fs.readFile(path, "utf8", (error, data) => {
 
 app.all('/', (req, res) => {
 
-    console.log(readedData.name)
-    res.send(req.header('x-forwarded-for'))
+    console.log("request token")
+    // res.send(req.header('x-forwarded-for'))
+    res.send(readedData)
 })
 app.listen(process.env.PORT || 3000)
