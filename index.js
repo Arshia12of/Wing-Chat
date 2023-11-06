@@ -18,7 +18,7 @@ fs.readFile(path, "utf8", (error, data) => {
 
 app.all('/', (req, res) => {
 
-    console.log("got a request!")
+    console.log(readedData["Arshia"])
     res.send(typeof(readedData))
 })
 app.listen(process.env.PORT || 3000)
