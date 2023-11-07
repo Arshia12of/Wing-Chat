@@ -20,6 +20,7 @@ app.all('/', (req, res) => {
 
     console.log("request token")
     // res.send(req.header('x-forwarded-for'))
-    res.send(readedData)
+    // res.send(readedData)
+    res.sendFile('./index.html');
 })
 app.listen(process.env.PORT || 3000)
